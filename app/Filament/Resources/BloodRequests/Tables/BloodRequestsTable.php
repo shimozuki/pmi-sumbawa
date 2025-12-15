@@ -36,7 +36,7 @@ class BloodRequestsTable
                     ->label('Donor Sekarang')
                     ->icon('heroicon-o-heart')
                     ->color('danger')
-                    ->url(fn() => url('/admin/pendonors/create'))
+                    ->url(fn() => url('/admin/donor-registration'))
                     ->visible(
                         fn($record) =>
                         auth()->user()?->hasRole('pendonor')
