@@ -57,6 +57,7 @@ class BloodStockResource extends Resource
         return \App\Filament\Resources\BloodStocks\Tables\BloodStocksTable::configure($table);
     }
 
+
     public static function getPages(): array
     {
         return [

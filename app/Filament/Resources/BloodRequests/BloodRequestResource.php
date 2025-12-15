@@ -27,6 +27,17 @@ class BloodRequestResource extends Resource
         return auth()->user()?->can('manage_blood_request');
     }
 
+    public static function canCreate(): bool
+    {
+        return ! auth()->user()?->hasRole('pendonor');
+    }
+
+    public static function canEdit($record): bool
+    {
+        return ! auth()->user()?->hasRole('pendonor');
+    }
+
+
     public static function getNavigationGroup(): ?string
     {
         return 'Transaksi';

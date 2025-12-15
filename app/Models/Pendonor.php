@@ -50,4 +50,9 @@ class Pendonor extends Model
     {
         return $this->tanggal_lahir->age;
     }
+
+    public function screening()
+    {
+        return $this->hasOne(Screening::class);
+    }
 }

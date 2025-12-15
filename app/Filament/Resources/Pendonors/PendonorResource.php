@@ -56,4 +56,9 @@ class PendonorResource extends Resource
             'edit' => EditPendonor::route('/{record}/edit'),
         ];
     }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return \App\Filament\Resources\Pendonors\Schemas\PendonorInfolist::configure($schema);
+    }
 }

@@ -14,7 +14,10 @@ class PendonorPanelProvider extends PanelProvider
             ->id('pendonor')
             ->path('pendonor')
             ->login()
-            ->registration() // pendonor bisa register
+            ->registration()
+            ->pages([
+                \App\Filament\Pages\DonorRegistration::class,
+            ]) // pendonor bisa register
             ->authMiddleware([
                 Authenticate::class,
             ])
