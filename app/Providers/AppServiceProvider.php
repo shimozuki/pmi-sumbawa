@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\BloodStock;
+use App\Models\Screening;
 use App\Observers\BloodStockObserver;
+use App\Observers\ScreeningObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Screening::observe(ScreeningObserver::class);
         BloodStock::observe(BloodStockObserver::class);
     }
 }

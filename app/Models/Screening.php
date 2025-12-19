@@ -32,4 +32,9 @@ class Screening extends Model
     {
         return $this->belongsTo(User::class, 'verified_by');
     }
+
+    public function antrian()
+    {
+        return $this->hasOne(Antrian::class);
+    }
 }
