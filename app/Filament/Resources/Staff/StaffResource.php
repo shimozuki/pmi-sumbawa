@@ -34,9 +34,10 @@ class StaffResource extends Resource
 
 
     // 🔒 hanya admin
-    public static function canViewAny(): bool
+        public static function canViewAny(): bool
     {
-        return true;
+        return auth()->check()
+            && auth()->user()?->can('manage_staff');
     }
 
     public static function form(Schema $schema): Schema
