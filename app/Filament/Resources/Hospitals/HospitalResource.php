@@ -27,7 +27,7 @@ class HospitalResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Master Data';
+        return 'Kelola Akun';
     }
 
     public static function form(Schema $schema): Schema

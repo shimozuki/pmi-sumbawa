@@ -29,8 +29,9 @@ class StaffResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Manajemen';
+        return 'Kelola Akun';
     }
+
 
     // 🔒 hanya admin
     public static function canViewAny(): bool

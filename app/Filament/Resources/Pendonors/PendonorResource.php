@@ -35,7 +35,7 @@ class PendonorResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Manajemen';
+        return 'Kelola Akun';
     }
 
     public static function form(Schema $schema): Schema
