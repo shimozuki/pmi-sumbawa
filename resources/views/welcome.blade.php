@@ -67,9 +67,7 @@
                     <a href="/admin/register"
                         class="border border-red-600 text-red-600 px-6 py-3 rounded-lg hover:bg-red-50 transition">
                         Daftar Pendonor
-                    </a
-
-                        </div>
+                    </a>
                 </div>
 
                 <div class="hidden md:block">
@@ -157,7 +155,7 @@
                 Donor darah Anda sangat berarti bagi mereka yang membutuhkan.
             </p>
 
-            <a href="/register" class="inline-block bg-pmi text-white px-8 py-4 rounded-lg shadow hover:bg-red-700 transition">
+            <a href="/admin/register" class="inline-block bg-pmi text-white px-8 py-4 rounded-lg shadow hover:bg-red-700 transition">
                 Daftar Donor Sekarang
             </a>
         </div>
