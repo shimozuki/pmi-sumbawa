@@ -30,7 +30,8 @@ class PendonorResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_pendonor');
+        return auth()->check()
+            && auth()->user()?->can('manage_pendonor');
     }
 
     public static function getNavigationGroup(): ?string

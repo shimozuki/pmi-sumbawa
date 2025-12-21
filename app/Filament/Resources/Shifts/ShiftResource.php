@@ -22,7 +22,8 @@ class ShiftResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_shift');
+        return auth()->check()
+            && auth()->user()?->can('manage_shift');
     }
 
     public static function getNavigationGroup(): ?string

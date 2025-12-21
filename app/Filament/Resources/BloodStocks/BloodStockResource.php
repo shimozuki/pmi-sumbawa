@@ -39,7 +39,8 @@ class BloodStockResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_blood_stock');
+        return auth()->check()
+            && auth()->user()?->can('manage_blood_stock');
     }
 
     public static function getNavigationGroup(): ?string

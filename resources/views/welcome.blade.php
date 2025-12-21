@@ -64,18 +64,20 @@
                     <a href="#donor" class="bg-pmi text-white px-6 py-3 rounded-lg shadow hover:bg-red-700 transition">
                         Jadwal Donor
                     </a>
-                    <a href="/register" class="border border-red-600 text-red-600 px-6 py-3 rounded-lg hover:bg-red-50 transition">
+                    <a href="/admin/register"
+                        class="border border-red-600 text-red-600 px-6 py-3 rounded-lg hover:bg-red-50 transition">
                         Daftar Pendonor
-                    </a>
+                    </a
+
+                        </div>
+                </div>
+
+                <div class="hidden md:block">
+                    <img src="{{ asset('images/donation-pana.png') }}"
+                        class="rounded-xl shadow-lg"
+                        alt="Donor Darah">
                 </div>
             </div>
-
-            <div class="hidden md:block">
-                <img src="{{ asset('images/donation-pana.png') }}"
-                    class="rounded-xl shadow-lg"
-                    alt="Donor Darah">
-            </div>
-        </div>
     </section>
 
     {{-- LAYANAN --}}

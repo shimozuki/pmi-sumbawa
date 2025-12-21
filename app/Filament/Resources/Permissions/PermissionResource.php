@@ -28,7 +28,8 @@ class PermissionResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->hasRole('admin');
+        return auth()->check()
+            && auth()->user()?->hasRole('admin');
     }
 
     public static function getNavigationGroup(): ?string

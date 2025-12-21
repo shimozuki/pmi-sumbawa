@@ -45,7 +45,8 @@ class JadwalDonorResource extends Resource
      */
     public static function canViewAny(): bool
     {
-        return auth()->check();
+        return auth()->check()
+            && auth()->user()?->can('manage_jadwal');
     }
 
     /**

@@ -32,7 +32,8 @@ class HealthCheckResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_health_check');
+        return auth()->check()
+            && auth()->user()?->can('manage_health_check');
     }
 
     // ❌ tidak boleh create dari menu

@@ -22,7 +22,8 @@ class HospitalResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_hospital');
+        return auth()->check()
+            && auth()->user()?->can('manage_hospital');
     }
 
     public static function getNavigationGroup(): ?string

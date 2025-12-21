@@ -28,7 +28,8 @@ class MobileUnitResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_mobile_unit');
+        return auth()->check()
+            && auth()->user()?->can('manage_mobile_unit');
     }
 
     public static function getNavigationGroup(): ?string

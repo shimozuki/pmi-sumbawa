@@ -22,7 +22,8 @@ class ScreeningQuestionResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_screening_questions');
+        return auth()->check()
+            && auth()->user()?->can('manage_screening_questions');
     }
 
     public static function getNavigationGroup(): ?string

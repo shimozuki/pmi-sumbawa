@@ -26,7 +26,8 @@ class BloodInRecordResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_blood_in');
+        return auth()->check()
+            && auth()->user()?->can('manage_blood_in');
     }
 
     public static function getNavigationGroup(): ?string

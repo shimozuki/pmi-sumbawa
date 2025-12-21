@@ -30,7 +30,8 @@ class AntrianResource extends Resource
      */
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_antrian');
+        return auth()->check()
+            && auth()->user()?->can('manage_antrian');
     }
 
     /**

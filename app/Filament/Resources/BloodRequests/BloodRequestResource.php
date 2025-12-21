@@ -24,7 +24,8 @@ class BloodRequestResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_blood_request');
+        return auth()->check()
+            && auth()->user()?->can('manage_blood_request');
     }
 
     public static function canCreate(): bool

@@ -26,7 +26,8 @@ class BloodOutRecordResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_blood_out');
+        return auth()->check()
+            && auth()->user()?->can('manage_blood_out');
     }
 
     public static function getNavigationGroup(): ?string

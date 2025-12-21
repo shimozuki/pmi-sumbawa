@@ -32,7 +32,8 @@ class ScreeningResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('manage_screening');
+        return auth()->check()
+            && auth()->user()?->can('manage_screening');
     }
 
     public static function form(Schema $schema): Schema

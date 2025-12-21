@@ -27,7 +27,8 @@ class DonorRegistration extends Page
 
     public static function canViewAny(): bool
     {
-        return auth()->user()?->can('register_as_donor');
+        return auth()->check()
+            && auth()->user()?->can('register_as_donor');
     }
 
     protected static string|BackedEnum|null $navigationIcon =
