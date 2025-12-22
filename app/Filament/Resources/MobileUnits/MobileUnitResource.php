@@ -32,6 +32,26 @@ class MobileUnitResource extends Resource
             && auth()->user()?->can('manage_mobile_unit');
     }
 
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->hasAnyRole(['admin', 'staff']);
+    }
+
+    public static function canEdit($record): bool
+    {
+        return auth()->user()?->hasAnyRole(['admin', 'staff']);
+    }
+
+    public static function canDelete($record): bool
+    {
+        return auth()->user()?->hasAnyRole(['admin', 'staff']);
+    }
+
+    public static function canDeleteAny(): bool
+    {
+        return auth()->user()?->hasAnyRole(['admin', 'staff']);
+    }
+
     public static function getNavigationGroup(): ?string
     {
         return 'Manajemen';

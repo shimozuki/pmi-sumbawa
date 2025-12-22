@@ -34,11 +34,11 @@ class MobileUnitsTable
                     ->label('Kapasitas'),
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()->visible(fn() => auth()->user()?->hasAnyRole(['admin', 'staff'])),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()->visible(fn() => auth()->user()?->hasAnyRole(['admin', 'staff'])),
                 ]),
             ]);
     }

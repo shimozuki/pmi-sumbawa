@@ -20,8 +20,7 @@ class HealthCheckResource extends Resource
 {
     protected static ?string $model = HealthCheck::class;
 
-    protected static string|BackedEnum|null $navigationIcon =
-    Heroicon::OutlinedHeart;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedHeart;
 
     protected static ?string $navigationLabel = 'Cek Kesehatan';
 
@@ -31,30 +30,30 @@ class HealthCheckResource extends Resource
     }
 
     public static function canViewAny(): bool
-{
-    return auth()->check()
-        && auth()->user()?->can('manage_health_check');
-}
+    {
+        return auth()->check()
+            && auth()->user()?->can('manage_health_check');
+    }
 
-public static function canEdit(): bool
-{
-    return auth()->check()
-        && auth()->user()?->hasAnyRole(['admin', 'staff']);
-}
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->hasAnyRole(['admin', 'staff']);
+    }
 
-public static function canDelete(): bool
-{
-    return auth()->check()
-        && auth()->user()?->hasAnyRole(['admin', 'staff']);
-}
+    public static function canEdit($record): bool
+    {
+        return auth()->user()?->hasAnyRole(['admin', 'staff']);
+    }
 
-public static function canCreate(): bool
-{
-    return auth()->check()
-        && auth()->user()?->hasAnyRole(['admin', 'staff']) && true;
-}
+    public static function canDelete($record): bool
+    {
+        return auth()->user()?->hasAnyRole(['admin', 'staff']);
+    }
 
-    // ❌ tidak boleh create dari menu
+    public static function canDeleteAny(): bool
+    {
+        return auth()->user()?->hasAnyRole(['admin', 'staff']);
+    }
 
     /* =======================
      |  FORM
