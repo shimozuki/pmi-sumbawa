@@ -25,6 +25,8 @@ class DonorRegistration extends Page
 {
     protected static ?string $navigationLabel = 'Registrasi Donor';
 
+protected static bool $shouldRegisterNavigation = false;
+
     public static function canViewAny(): bool
     {
         return auth()->check()
