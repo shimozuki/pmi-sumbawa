@@ -30,7 +30,7 @@ class HospitalForm
                         ->unique(
                             table: User::class,
                             column: 'email',
-                            ignoreRecord: true
+                            ignorable: fn($record) => $record?->user
                         ),
 
                     Forms\Components\TextInput::make('password')

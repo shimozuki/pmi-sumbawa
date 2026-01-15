@@ -8,6 +8,7 @@ use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\RestoreAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
+use Filament\Actions\Action;
 
 class EditStaff extends EditRecord
 {
@@ -21,5 +22,13 @@ class EditStaff extends EditRecord
             ForceDeleteAction::make(),
             RestoreAction::make(),
         ];
+    }
+
+    protected function getCancelFormAction(): Action
+    {
+        return Action::make('back')
+            ->label('Back')
+            ->url($this->getResource()::getUrl('index'))
+            ->color('gray');
     }
 }

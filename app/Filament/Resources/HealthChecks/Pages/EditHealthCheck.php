@@ -6,6 +6,7 @@ use App\Filament\Resources\HealthChecks\HealthCheckResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
+use Filament\Actions\Action;
 
 class EditHealthCheck extends EditRecord
 {
@@ -17,5 +18,13 @@ class EditHealthCheck extends EditRecord
             ViewAction::make(),
             DeleteAction::make(),
         ];
+    }
+
+    protected function getCancelFormAction(): Action
+    {
+        return Action::make('back')
+            ->label('Back')
+            ->url($this->getResource()::getUrl('index'))
+            ->color('gray');
     }
 }

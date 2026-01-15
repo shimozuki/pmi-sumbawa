@@ -10,11 +10,6 @@ return new class extends Migration {
         Schema::create('blood_out_records', function (Blueprint $table) {
             $table->id();
 
-            // $table->foreignId('rumah_sakit_id')
-            //     ->nullable()
-            //     ->constrained()
-            //     ->nullOnDelete();
-
             $table->date('tanggal_keluar');
 
             $table->string('golongan_darah');
