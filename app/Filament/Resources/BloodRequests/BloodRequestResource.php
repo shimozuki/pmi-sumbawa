@@ -18,7 +18,7 @@ class BloodRequestResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocument;
 
-    protected static ?string $navigationLabel = 'Permintaan Darah RS';
+    protected static ?string $navigationLabel = 'Permintaan Amprah Darah RS';
 
     protected static ?string $pluralModelLabel = 'Permintaan Amprahan Darah';
 
