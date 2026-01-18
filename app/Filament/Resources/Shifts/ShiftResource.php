@@ -17,7 +17,7 @@ class ShiftResource extends Resource
     protected static ?string $model = Shift::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClock;
-
+    protected static ?string $pluralModelLabel = 'Shift';
     protected static ?string $navigationLabel = 'Shift';
 
     public static function canViewAny(): bool
