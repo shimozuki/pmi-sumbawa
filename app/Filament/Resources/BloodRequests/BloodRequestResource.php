@@ -20,7 +20,7 @@ class BloodRequestResource extends Resource
 
     protected static ?string $navigationLabel = 'Permintaan Darah RS';
 
-    protected static ?string $pluralModelLabel = 'Permintaan Darah';
+    protected static ?string $pluralModelLabel = 'Permintaan Amprahan Darah';
 
     public static function canViewAny(): bool
     {
